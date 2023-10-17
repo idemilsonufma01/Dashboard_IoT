@@ -4,7 +4,7 @@ const app = express();
 
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname + "/html/index.html");
+    res.sendFile(__dirname + "/views/index.html");
 });
 
 app.get("/sobre", function(req, res){
