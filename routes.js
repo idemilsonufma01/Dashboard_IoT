@@ -3,9 +3,22 @@ const routes = express.Router();
 
 
 
-routes.get("/", function(req, res){
-    res.sendFile(__dirname + "/views/index.html");
+routes.get("/", function(req, res, next){
+    //res.sendFile(__dirname + "/views/index.html");
+    console.log(" eu sou o middleware");
+    
 });
+
+routes.get("/sobre", function(req, res){
+    res.sendFile(__dirname + "/views/index.html");
+})
+
+routes.get("/blog", function(req, res){
+    res.send("Minha pagina blog");
+});
+
+
+
 
 // routes.get("/sobre", function(req, res){
 //     res.send("Minha pagina sobre");
