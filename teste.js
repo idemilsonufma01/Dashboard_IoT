@@ -14,11 +14,32 @@ const Postagem = sequelize.define('postagens',{
   }
 })
 
+//criar
+Postagem.create({
+  titulos: "Um Titulo Qualquer",
+  conteudo: "Era uma vez um lugazinho no meio do nada com sabor de chocolate"
+})
 
-Postagem.sync({force:true})
+const Usuario = sequelize.define('usuarios',{
+  nome: {
+    type:Sequelize.STRING
+  },
+  sobrenome: {
+    type:Sequelize.STRING
+  },
+  idade: {
+    type:Sequelize.INTEGER
+  },
+  email: {
+    type: Sequelize.STRING
+  }
+})
 
-// sequelize.authenticate().then(function(){
-//   console.log("conectado com sucesso!")
-// }).catch(function(erro){
-//   console.log("Falha ao se conectar: "+erro)
-// })
+Usuario.create({
+  nome: "Idemilson",
+  sobrenome: "silva",
+  idade: 29,
+  email: "idemilsonsilva93@gmail.com"
+})
+
+//Usuario.sync({force:true})

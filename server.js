@@ -2,8 +2,9 @@ const routes = require('./routes')
 const db = require('./db')
 const express = require("express");
 const app = express();
-
 app.use('/', routes);
+
+
 
 db.sync().then(()=> {
   console.log("Banco de Dados conectado!")
