@@ -13,29 +13,20 @@ const sequelize = new Sequelize(dbName, dbUser, dbPassword,{
 
 //models(Tabela)
 
-const SensorTemperatura = sequelize.define('SensorTemperatura',{
-  valor: {
-    type:Sequelize.INTEGER,
+const Data = sequelize.define('data',{
+  sensorTemperatura: {
+    type:Sequelize.DOUBLE,
+  },
+  sensorLuz: {
+    type:Sequelize.DOUBLE,
+  },
+  sensorUmidade: {
+    type:Sequelize.DOUBLE,
   },
 });
 
-//SensorTemperatura.sync({force:true})
 
-const SensorPresenca = sequelize.define('SensorPresenca',{
-  valor: {
-    type: Sequelize.INTEGER,
-  },
-});
-
-//SensorPresenca.sync({force:true})
-
-const SensorLuz = sequelize.define('SensorLuz',{
-  valor: {
-    type: Sequelize.INTEGER,
-  },
-});
-
-//SensorLuz.sync({force:true})
+sequelize.sync()
 
 
-module.exports = sequelize;
+module.exports = {sequelize};
